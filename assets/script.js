@@ -113,26 +113,25 @@ function generatePassword() {
 
   if (isLower && isUpper && isNumber && !isSymbol) {
     userChoices = numbersvar.concat(upper, lower);
-    console.log(userChoices);
- 
+    
   }
 
   if (!isLower && isUpper && isNumber && !isSymbol) {
     userChoices = numbersvar.concat(upper);
-    console.log(userChoices);
+    
  
   }
 
   if (isLower && !isUpper && isNumber && !isSymbol) {
     userChoices = numbersvar.concat(lower);
-    console.log(userChoices);
+    
  
   }
 
 
   if (!isLower && !isUpper && isNumber && !isSymbol) {
     userChoices = numbersvar;
-    console.log(userChoices);
+    
  
   }
 
@@ -142,7 +141,7 @@ function generatePassword() {
 
   if (!isLower && isUpper && isNumber && isSymbol) {
     userChoices = symbol.concat(upper, numbersvar);
-    console.log(userChoices);
+    
  
   }
 
