@@ -42,7 +42,7 @@ function generatePassword() {
 	}
 
   if (passLength > 128) {
-		window.alert('You must create a password that is at less than 128 characters long.');
+		window.alert('You must create a password that is less than 128 characters long.');
 		return;
 	}
     isLower = window.confirm('Do you want to use lower case characters in your password?');
@@ -62,15 +62,15 @@ function generatePassword() {
     userChoices = lower.concat(upper, numbersvar, symbol);
   }
 
-  else if (isLower && isUpper && isNumber && !isSymbol) {
+  if (isLower && isUpper && isNumber && !isSymbol) {
     userChoices = lower.concat(upper, numbersvar);
   }
 
-  else if (isLower && isUpper && !isNumber && !isSymbol) {
+  if (isLower && isUpper && !isNumber && !isSymbol) {
     userChoices = lower.concat(upper);
   }
 
-  else if (isLower && !isUpper && !isNumber && !isSymbol) {
+  if (isLower && !isUpper && !isNumber && !isSymbol) {
     userChoices = lower;
   }
   //--------------------- 2
