@@ -40,6 +40,11 @@ function generatePassword() {
 		window.alert('You must create a password that is at least 8 characters long.');
 		return;
 	}
+
+  if (passLength > 128) {
+		window.alert('You must create a password that is at less than 128 characters long.');
+		return;
+	}
     isLower = window.confirm('Do you want to use lower case characters in your password?');
   
     isUpper = window.confirm('Do you want to use upper case characters in your password?');
@@ -52,41 +57,26 @@ function generatePassword() {
      window.alert('You must select at least one character type for your password.')
     return;
    }
-  console.log(passLength, isLower, isUpper, isNumber, isSymbol);
-
 //--------------------- 1
-
   if (isLower && isUpper && isNumber && isSymbol) {
     userChoices = lower.concat(upper, numbersvar, symbol);
-    console.log(userChoices);
- 
   }
 
   else if (isLower && isUpper && isNumber && !isSymbol) {
     userChoices = lower.concat(upper, numbersvar);
-    console.log(userChoices);
- 
   }
 
   else if (isLower && isUpper && !isNumber && !isSymbol) {
     userChoices = lower.concat(upper);
-    console.log(userChoices);
- 
   }
 
   else if (isLower && !isUpper && !isNumber && !isSymbol) {
     userChoices = lower;
-    console.log(userChoices);
- 
   }
-
   //--------------------- 2
 
-  if (isUpper && isLower && isNumber && isSymbol) {
-    userChoices = upper.concat(lower, numbersvar, symbol);
-    console.log(userChoices);
  
-  }
+
 
   if (isUpper && isLower && isNumber && !isSymbol) {
     userChoices = upper.concat(lower, numbersvar);
@@ -109,52 +99,44 @@ function generatePassword() {
 
   //--------------------- 3
 
-  if (isLower && isUpper && isNumber && isSymbol) {
-    userChoices = lower.concat(upper, numbersvar, symbol);
-    console.log(userChoices);
- 
-  }
+
 
   if (isLower && isUpper && isNumber && !isSymbol) {
-    userChoices = lower.concat(upper, numbersvar);
+    userChoices = numbersvar.concat(upper, lower);
     console.log(userChoices);
  
   }
 
-  if (isLower && isUpper && !isNumber && !isSymbol) {
-    userChoices = lower.concat(upper);
+  if (!isLower && isUpper && isNumber && !isSymbol) {
+    userChoices = numbersvar.concat(upper);
     console.log(userChoices);
  
   }
 
-  if (isLower && !isUpper && !isNumber && !isSymbol) {
-    userChoices = lower;
+  if (!isLower && !isUpper && isNumber && !isSymbol) {
+    userChoices = numbersvar;
     console.log(userChoices);
  
   }
 
   //--------------------- 4
 
-  if (isLower && isUpper && isNumber && isSymbol) {
-    userChoices = lower.concat(upper, numbersvar, symbol);
+ 
+
+  if (!isLower && isUpper && isNumber && isSymbol) {
+    userChoices = symbol.concat(upper, numbersvar);
     console.log(userChoices);
  
   }
 
-  if (isLower && isUpper && isNumber && !isSymbol) {
-    userChoices = lower.concat(upper, numbersvar);
+  if (!isLower && isUpper && !isNumber && isSymbol) {
+    userChoices = symbol.concat(upper);
     console.log(userChoices);
  
   }
 
-  if (isLower && isUpper && !isNumber && !isSymbol) {
-    userChoices = lower.concat(upper);
-    console.log(userChoices);
- 
-  }
-
-  if (isLower && !isUpper && !isNumber && !isSymbol) {
-    userChoices = lower;
+  if (!isLower && !isUpper && !isNumber && isSymbol) {
+    userChoices = symbol;
     console.log(userChoices);
  
   }
