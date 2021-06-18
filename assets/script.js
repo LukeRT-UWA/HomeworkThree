@@ -152,7 +152,7 @@ function generatePassword() {
  
   }
 
-  if (isLower && !sUpper && !isNumber && isSymbol) {
+  if (isLower && !isUpper && !isNumber && isSymbol) {
     userChoices = symbol.concat(lower);
     
  
