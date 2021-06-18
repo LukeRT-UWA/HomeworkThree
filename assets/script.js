@@ -70,6 +70,10 @@ function generatePassword() {
     userChoices = lower.concat(upper);
   }
 
+  if (isLower && !isUpper && isNumber && !isSymbol) {
+    userChoices = lower.concat(numbersvar);
+  }
+
   if (isLower && !isUpper && !isNumber && !isSymbol) {
     userChoices = lower;
   }
@@ -80,19 +84,25 @@ function generatePassword() {
 
   if (isUpper && isLower && isNumber && !isSymbol) {
     userChoices = upper.concat(lower, numbersvar);
-    console.log(userChoices);
+   
  
   }
 
   if (isUpper && isLower && !isNumber && !isSymbol) {
     userChoices = upper.concat(lower);
-    console.log(userChoices);
- 
+   
+
   }
+
+  if (isUpper && !isLower && isNumber && !isSymbol) {
+    userChoices = upper.concat(numbersvar);
+   
+  }
+
 
   if (isUpper && !isLower && !isNumber && !isSymbol) {
     userChoices = upper;
-    console.log(userChoices);
+   
  
   }
 
@@ -113,6 +123,13 @@ function generatePassword() {
  
   }
 
+  if (isLower && !isUpper && isNumber && !isSymbol) {
+    userChoices = numbersvar.concat(lower);
+    console.log(userChoices);
+ 
+  }
+
+
   if (!isLower && !isUpper && isNumber && !isSymbol) {
     userChoices = numbersvar;
     console.log(userChoices);
@@ -131,13 +148,19 @@ function generatePassword() {
 
   if (!isLower && isUpper && !isNumber && isSymbol) {
     userChoices = symbol.concat(upper);
-    console.log(userChoices);
+    
+ 
+  }
+
+  if (isLower && !sUpper && !isNumber && isSymbol) {
+    userChoices = symbol.concat(lower);
+    
  
   }
 
   if (!isLower && !isUpper && !isNumber && isSymbol) {
     userChoices = symbol;
-    console.log(userChoices);
+  
  
   }
 
