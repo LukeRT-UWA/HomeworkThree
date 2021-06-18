@@ -1,7 +1,10 @@
 # HomeworkThree
 
-Assignment number three.
+https://lukert-uwa.github.io/HomeworkThree/
 
-https://www.net-comber.com/charset.html
+Assignment number three - password generator.
 
-https://www.owasp.org/index.php/Password_special_characters
+Min 8 max 128 character password. Can toggle use of Uppercase, lowercase, numbers and special characters.
+
+![Website Screenshot](assets/images/website-screenshot.jpg)
+
