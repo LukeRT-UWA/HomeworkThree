@@ -62,19 +62,19 @@ function generatePassword() {
  
   }
 
-  if (isLower && isUpper && isNumber && !isSymbol) {
+  else if (isLower && isUpper && isNumber && !isSymbol) {
     userChoices = lower.concat(upper, numbersvar);
     console.log(userChoices);
  
   }
 
-  if (isLower && isUpper && !isNumber && !isSymbol) {
+  else if (isLower && isUpper && !isNumber && !isSymbol) {
     userChoices = lower.concat(upper);
     console.log(userChoices);
  
   }
 
-  if (isLower && !isUpper && !isNumber && !isSymbol) {
+  else if (isLower && !isUpper && !isNumber && !isSymbol) {
     userChoices = lower;
     console.log(userChoices);
  
