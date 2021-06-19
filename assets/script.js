@@ -4,7 +4,6 @@ var lower = 'abcdefghijklmnopqrstuvwxyz';
 var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var numbersvar = '0123456789';
 var symbol = '!@#$%^&*=-_';
-var pass;
 
 // Points to generate password button on page
 var generateBtn = document.querySelector("#generate");
@@ -78,99 +77,54 @@ function generatePassword() {
     userChoices = lower;
   }
   //--------------------- 2
-
- 
-
-
   if (isUpper && isLower && isNumber && !isSymbol) {
     userChoices = upper.concat(lower, numbersvar);
-   
- 
   }
-
   if (isUpper && isLower && !isNumber && !isSymbol) {
     userChoices = upper.concat(lower);
-   
-
   }
-
   if (isUpper && !isLower && isNumber && !isSymbol) {
     userChoices = upper.concat(numbersvar);
-   
-  }
-
-
+   }
   if (isUpper && !isLower && !isNumber && !isSymbol) {
     userChoices = upper;
-   
- 
-  }
-
-
+   }
   //--------------------- 3
-
-
 
   if (isLower && isUpper && isNumber && !isSymbol) {
     userChoices = numbersvar.concat(upper, lower);
-    
-  }
-
+   }
   if (!isLower && isUpper && isNumber && !isSymbol) {
     userChoices = numbersvar.concat(upper);
-    
- 
   }
-
   if (isLower && !isUpper && isNumber && !isSymbol) {
     userChoices = numbersvar.concat(lower);
-    
- 
   }
-
-
   if (!isLower && !isUpper && isNumber && !isSymbol) {
     userChoices = numbersvar;
-    
- 
   }
-
   //--------------------- 4
-
- 
-
   if (!isLower && isUpper && isNumber && isSymbol) {
     userChoices = symbol.concat(upper, numbersvar);
-    
- 
   }
-
   if (!isLower && isUpper && !isNumber && isSymbol) {
     userChoices = symbol.concat(upper);
-    
- 
   }
-
   if (isLower && !isUpper && !isNumber && isSymbol) {
     userChoices = symbol.concat(lower);
-    
- 
   }
-
   if (!isLower && !isUpper && !isNumber && isSymbol) {
     userChoices = symbol;
-  
- 
-  }
-
-  // ---------
+   }
+  //Create password
+  //Blank pass to use as basis
   var passwordBlank =[];
-
+//
   for (var i = 0; i < passLength; i++) {
     var passwordstring = userChoices[Math.floor(Math.random() * userChoices.length)];
     passwordBlank.push(passwordstring);
   }
-
+//Joins password generated onto password variable (without commas) then returns it to deisplay on line 14 and 15
   var password1 = passwordBlank.join("");
   return password1;
 }
