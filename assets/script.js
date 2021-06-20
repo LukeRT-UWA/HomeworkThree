@@ -117,7 +117,7 @@ function generatePassword() {
   if (!isLower && !isUpper && !isNumber && isSymbol) {
     userChoices = symbol;
    }
-  
+   var passwordBlank =[];
 //Creates password 
   for (var i = 0; i < passLength; i++) {
     var passwordstring = userChoices[Math.floor(Math.random() * userChoices.length)];
