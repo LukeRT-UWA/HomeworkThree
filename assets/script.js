@@ -15,7 +15,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password1;
-
 }
 
 // Add event listener to generate button
@@ -33,14 +32,12 @@ function generatePassword() {
 
   if (isNaN(passLength)) {
     window.alert('You can only input numbers.')
-    return;
+    return generatePassword;
   }
   if (passLength < 8) {
     window.alert('You must create a password that is at least 8 characters long.');
     return generatePassword();
-
   }
-
   if (passLength > 128) {
     window.alert('You must create a password that is less than 128 characters long.');
     return generatePassword();
@@ -117,6 +114,7 @@ function generatePassword() {
   if (!isLower && !isUpper && !isNumber && isSymbol) {
     userChoices = symbol;
   }
+  
   var passwordBlank = [];
   //Creates password 
   for (var i = 0; i < passLength; i++) {
@@ -126,4 +124,6 @@ function generatePassword() {
   //Joins password generated onto password variable (without commas) then returns it to deisplay on line 14 and 15
   var password1 = passwordBlank.join("");
   return password1;
+
+  
 }
