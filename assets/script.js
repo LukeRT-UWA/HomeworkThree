@@ -1,5 +1,5 @@
 //Character sets
-
+var passwordBlank =[];
 var lower = 'abcdefghijklmnopqrstuvwxyz';
 var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var numbersvar = '0123456789';
@@ -8,7 +8,7 @@ var symbol = '!@#$%^&*=-_';
 // Points to generate password button on page
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+// Write password to #password
 function writePassword() {
   
   var password1 = generatePassword();
@@ -38,6 +38,7 @@ function generatePassword() {
   if (passLength < 8) {
 		window.alert('You must create a password that is at least 8 characters long.');
 		return;
+    
 	}
 
   if (passLength > 128) {
@@ -116,10 +117,8 @@ function generatePassword() {
   if (!isLower && !isUpper && !isNumber && isSymbol) {
     userChoices = symbol;
    }
-  //Create password
-  //Blank pass to use as basis
-  var passwordBlank =[];
-//
+  
+//Creates password 
   for (var i = 0; i < passLength; i++) {
     var passwordstring = userChoices[Math.floor(Math.random() * userChoices.length)];
     passwordBlank.push(passwordstring);
