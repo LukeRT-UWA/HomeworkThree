@@ -26,17 +26,10 @@ function generatePassword() {
 
   var passLength = window.prompt('How many characters long will your password be?');
 
- 
-
   if (!passLength) {
     return;
   }
   
-  if (passLength.value === "") {
-    window.alert('Please enter a value.')
-    return generatePassword();
-  }
-
   if (isNaN(passLength)) {
     window.alert('You can only input numbers.')
     return generatePassword();
@@ -76,6 +69,10 @@ function generatePassword() {
 
   if (isLower && !isUpper && isNumber && !isSymbol) {
     userChoices = lower.concat(numbersvar);
+  }
+
+  if (isLower && !isUpper && isNumber && isSymbol) {
+    userChoices = lower.concat(numbersvar, symbol);
   }
 
   if (isLower && !isUpper && !isNumber && !isSymbol) {
@@ -121,6 +118,12 @@ function generatePassword() {
   if (!isLower && !isUpper && !isNumber && isSymbol) {
     userChoices = symbol;
   }
+
+  if (isLower && isUpper && !isNumber && isSymbol) {
+    userChoices = symbol.concat(lower, upper);
+  }
+
+  
   
   var passwordBlank = [];
   //Creates password 
