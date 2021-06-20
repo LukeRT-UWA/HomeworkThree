@@ -26,13 +26,20 @@ function generatePassword() {
 
   var passLength = window.prompt('How many characters long will your password be?');
 
+ 
+
   if (!passLength) {
     return;
+  }
+  
+  if (passLength.value === "") {
+    window.alert('Please enter a value.')
+    return generatePassword();
   }
 
   if (isNaN(passLength)) {
     window.alert('You can only input numbers.')
-    return generatePassword;
+    return generatePassword();
   }
   if (passLength < 8) {
     window.alert('You must create a password that is at least 8 characters long.');
