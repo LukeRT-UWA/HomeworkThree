@@ -1,6 +1,6 @@
-# HomeworkThree
+# Password Generator
 
-https://lukert-uwa.github.io/HomeworkThree/
+https://lukert-uwa.github.io/Password-Generator/
 
 Assignment number three - password generator.
 
